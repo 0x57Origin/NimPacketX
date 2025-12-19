@@ -164,8 +164,16 @@ proc elevateIfNeeded*() =
   when defined(windows):
     if not isRunningAsAdmin():
       let exePath = getAppFilename()
+      # Build command line arguments to pass to elevated process
+      var params = ""
+      for i in 1..paramCount():
+        if i > 1:
+          params &= " "
+        params &= "\"" & paramStr(i) & "\""
+
       let result = ShellExecuteW(nil, newWideCString("runas"),
-                                 newWideCString(exePath), nil, nil, 1)
+                                 newWideCString(exePath),
+                                 newWideCString(params), nil, 1)
       if cast[int](result) > 32:
         quit(0)
       else:
