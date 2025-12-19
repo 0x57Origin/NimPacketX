@@ -326,7 +326,7 @@ proc sendPacket*(sock: RawSocket, packet: seq[byte], destIP: string): int {.disc
     return bytesSent
   else:
     var destAddr: Sockaddr_in
-    destAddr.sin_family = sock.family.uint16
+    destAddr.sin_family = sock.family.TSa_Family
     destAddr.sin_port = 0
 
     if posix.inet_pton(posix.AF_INET, cstring(destIP),
