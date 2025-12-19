@@ -18,6 +18,7 @@ tests/test_integration
 examples/demo
 examples/packet_analyzer
 
+
 # IDE
 .vscode/
 *.swp
@@ -26,3 +27,6 @@ examples/packet_analyzer
 # OS
 .DS_Store
 *.exe
+
+# Website
+website/
