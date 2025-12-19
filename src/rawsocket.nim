@@ -62,13 +62,14 @@ else:
   import std/posix
 
   const
-    INVALID_SOCKET* = -1
+    # SocketHandle is a distinct type on POSIX, so we need to cast -1 to SocketHandle
+    INVALID_SOCKET* = SocketHandle(-1)
     SOCKET_ERROR* = -1
     IP_HDRINCL* = 3
 
   type
     RawSocket* = object
-      handle: cint
+      handle: SocketHandle  # Changed from cint to SocketHandle to match posix.socket return type
       family: cint
       protocol: cint
       isOpen*: bool
@@ -203,7 +204,8 @@ proc close*(sock: var RawSocket) =
     when defined(windows):
       discard closesocket(sock.handle)
     else:
-      discard posix.close(sock.handle)
+      # Cast SocketHandle to cint since posix.close expects cint
+      discard posix.close(sock.handle.cint)
     sock.isOpen = false
 
 proc setIPHeaderInclude*(sock: RawSocket, enable: bool) =
