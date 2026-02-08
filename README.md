@@ -33,7 +33,7 @@ if np.is_admin():
     np.close_socket()
 ```
 
-### [**📚 CLICK HERE FOR PYTHON DOCUMENTATION**](docs/PythonBinding.md)
+### [** CLICK HERE FOR PYTHON DOCUMENTATION**](docs/PythonBinding.md)
 
 **Quick Install:**
 ```bash
@@ -43,9 +43,9 @@ python build.py  # Build Nim extension for best performance
 ```
 
 **New Protocol Support:**
-- ✅ DNS (A, AAAA, CNAME, MX, TXT, NS, PTR, SOA, SRV records)
-- ✅ DHCP (DISCOVER, OFFER, REQUEST, ACK, NAK, RELEASE, INFORM)
-- ✅ All existing protocols (IPv4, IPv6, TCP, UDP, ICMP, ICMPv6, Ethernet, ARP)
+-  DNS (A, AAAA, CNAME, MX, TXT, NS, PTR, SOA, SRV records)
+-  DHCP (DISCOVER, OFFER, REQUEST, ACK, NAK, RELEASE, INFORM)
+-  All existing protocols (IPv4, IPv6, TCP, UDP, ICMP, ICMPv6, Ethernet, ARP)
 
 ---
 
