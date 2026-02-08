@@ -567,7 +567,3 @@ Always obtain proper authorization before testing any network.
 Contributions are welcome! Please see the main [NimPacket repository](https://github.com/0x57Origin/NimPacket) for contribution guidelines.
 
 ---
-
-## License
-
-MIT License - See [LICENSE](../LICENSE) for details.
