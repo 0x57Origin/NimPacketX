@@ -1,0 +1,10 @@
+# NimPacket Python Dependencies
+#
+# Core dependencies (none required - pure Python fallback available)
+
+# Development dependencies
+pytest>=7.0
+pytest-cov>=4.0
+
+# Optional: For enhanced functionality
+# scapy>=2.5.0  # For raw socket operations
