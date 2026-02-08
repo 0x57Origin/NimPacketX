@@ -30,3 +30,7 @@ examples/packet_analyzer
 
 # Website
 website/
+
+__pycache__/
+*.pyc
+*.pyo
